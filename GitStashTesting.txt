@@ -2,3 +2,8 @@ Stash testing
 
 Hello
 How are you
+
+/* this changes is done after stashing ie earlier changes are stashed */
+
+this one I need to commit
+

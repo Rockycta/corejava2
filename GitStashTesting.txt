@@ -3,7 +3,12 @@ Stash testing
 Hello
 How are you
 
+<<<<<<< Updated upstream
 /* this changes is done after stashing ie earlier changes are stashed */
 
 this one I need to commit
 
+=======
+/*Stashing code*/
+The text written here need to be stashed for testing*/
+>>>>>>> Stashed changes

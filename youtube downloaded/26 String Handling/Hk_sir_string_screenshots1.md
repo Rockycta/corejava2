@@ -1,5 +1,2 @@
 
-1: 
-![alt text](https://github.com/Rockycta/corejava2/blob/master/HKSIRNOTES/03%20Xerox03%20%20OOP__Array__Pac_SH__Col__RA__RE%20(CJ)_png%20files/03%20Xerox03%20%20OOP__Array__Pac_SH__Col__RA__RE%20(CJ)-1-1.png)
-2:
-![alt text](https://github.com/Rockycta/corejava2/blob/master/HKSIRNOTES/03%20Xerox03%20%20OOP__Array__Pac_SH__Col__RA__RE%20(CJ)_png%20files/03%20Xerox03%20%20OOP__Array__Pac_SH__Col__RA__RE%20(CJ)-2-1.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/youtube%20downloaded/26%20String%20Handling/1/Screenshot%20(1970).png)

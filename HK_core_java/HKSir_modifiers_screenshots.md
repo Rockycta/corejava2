@@ -59,12 +59,51 @@ aa:
 
 ![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/1/ocrac.png)
 
-![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/1/ocrad.png)
 
-![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/1/ocrae.png)
+aa:
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/aa.png)
 
-![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/1/ocrae1.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ab.png)
 
-![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/1/ocraf.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ac.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ad.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ae.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/af.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ag.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ah.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ai.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/aj.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ak.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/al.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/am.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/an.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ao.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ap.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/aq.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ar.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/as.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/at.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/au.png)
+aa:
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/av.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/aw.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ax.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ay.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/az.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ba.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/bb.png)
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/bc.png)
+
+![alt text](https://github.com/Rockycta/corejava2/blob/master/HK_core_java/7_modifiers/2/ocrax.png)
+
+
 
 

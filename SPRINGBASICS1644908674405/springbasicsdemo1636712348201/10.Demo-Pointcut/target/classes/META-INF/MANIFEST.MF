@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: rocky
+Build-Jdk: 17.0.9
+Implementation-Title: demo-pointcut
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.infosys
+Implementation-URL: http://www.example.com
+Created-By: Maven Integration for Eclipse
+

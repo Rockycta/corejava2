@@ -1,6 +1,10 @@
 **Tell me what is wrong with this code**\
 [Greentings.java](https://github.com/Rockycta/corejava2/blob/rocky/MyPractices/src/com/rocky/in/Greentings.java)\
+
+**Tell me what is wrong with this code**\
+[WellWisher.java](https://github.com/Rockycta/corejava2/blob/rocky/MyPractices/src/com/rocky/in/WellWisher.java)
 \
+
 \
 \
 \

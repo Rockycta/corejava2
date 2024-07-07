@@ -13,6 +13,11 @@ public class WellWisher2 {
 		Greentings HindiGreetings=()-> System.out.println("Greentings in Hindi");
 		HindiGreetings.greet();
 
+		
+		/*
+		 * The error "Cannot make a static reference to the non-static method
+		 * wish(Greentings) from the type WellWisher" is resolved by following code
+		 */
 		WellWisher2 wellWisher = new WellWisher2();
 		wellWisher.wish(greentings);
 		wellWisher.wish(EnglishGreetings);

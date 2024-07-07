@@ -1,0 +1,34 @@
+package com.rocky2.in;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SortingObjects {
+
+	public static void main(String[] args) {
+		
+	//	new Person(1,"Rakesh",35);
+		
+	/*
+	 * Person person = new Person(); Person person2 = new Person(); Person person3 =
+	 * new Person();
+	 * 
+	 */
+		
+	
+	 
+	 List<Person> list = new ArrayList<Person>();
+	 list.add(new Person(1, "Rakesh", 35));
+	 list.add(new Person(4, "Sreya", 29));
+	 list.add(new Person(2, "Kanmani", 40));
+	 list.add(new Person(3, "Chinmini",25));
+	
+
+	 Collections.sort(list,new PersonComparator());
+	 System.out.println(list);
+	 
+	 list.stream().forEach(p->System.out.println(p.getName()));
+	 
+	}
+}

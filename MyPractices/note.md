@@ -12,5 +12,5 @@ ErrorScreenshot:
 ![alt text](https://github.com/Rockycta/corejava2/blob/rocky/MyPractices/Screenshot%20(27).png)\
 \
 
-**Error resolved in below code**
+**Error resolved in below code**\
 [WellWisher2.java](https://github.com/Rockycta/corejava2/blob/rocky/MyPractices/src/com/rocky/in/WellWisher2.java)

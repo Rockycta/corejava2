@@ -1,0 +1,7 @@
+[pom.xml](https://github.com/Rockycta/corejava2/blob/29e10c3ad06b57da80f9c947f5653678f2a7f45a/SpringRESTdemoswithscript1641974425246/infytel_demo1_Spring_REST_using_Spring_Boot/infytel_demo1/pom.xml)
+
+[application.properties](https://github.com/Rockycta/corejava2/blob/29e10c3ad06b57da80f9c947f5653678f2a7f45a/SpringRESTdemoswithscript1641974425246/infytel_demo1_Spring_REST_using_Spring_Boot/infytel_demo1/src/main/resources/application.properties)
+
+[CustomerController.java](https://github.com/Rockycta/corejava2/blob/29e10c3ad06b57da80f9c947f5653678f2a7f45a/SpringRESTdemoswithscript1641974425246/infytel_demo1_Spring_REST_using_Spring_Boot/infytel_demo1/src/main/java/com/infytel/controller/CustomerController.java)
+
+[InfytelDemo1Application.java](https://github.com/Rockycta/corejava2/blob/29e10c3ad06b57da80f9c947f5653678f2a7f45a/SpringRESTdemoswithscript1641974425246/infytel_demo1_Spring_REST_using_Spring_Boot/infytel_demo1/src/main/java/com/infytel/InfytelDemo1Application.java)

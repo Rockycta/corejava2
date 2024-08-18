@@ -1,0 +1,21 @@
+@PostMapping(consumes="application/json")
+public ResponseEntity createCustomer(@Valid @RequestBody CustomerDTO customerDTO, Errors errors) 
+	{
+		String response = "";
+		if (errors.hasErrors()) 
+		{			
+			response  = errors.getAllErrors().stream()
+                                             .map(ObjectError::getDefaultMessage)
+                                             .collect(Collectors.joining(","));
+			ErrorMessage error = new ErrorMessage();
+		    error.setErrorCode(HttpStatus.NOT_ACCEPTABLE.value());
+		    error.setMessage(response);
+		    return ResponseEntity.ok(error);
+		}
+		 else
+		 {
+			 response = customerService.createCustomer(customerDTO);
+			 return ResponseEntity.ok(response);
+		 }
+			
+	}

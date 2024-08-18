@@ -1,0 +1,8 @@
+@PostMapping(consumes="application/json")
+public ResponseEntity<String> createCustomer(@RequestBody CustomerDTO customerDTO)
+{
+	//This method will create a customer
+	String response = customerService.createCustomer(customerDTO);
+	return ResponseEntity.ok(response);
+}
+

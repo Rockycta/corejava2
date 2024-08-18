@@ -1,0 +1,7 @@
+@RestControllerAdvice
+public class ExceptionControllerAdvice {
+	@ExceptionHandler(NoSuchCustomerException.class)
+	public ResponseEntity<String> exceptionHandler2(NoSuchCustomerException ex) {
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+}

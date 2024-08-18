@@ -1,0 +1,8 @@
+@PostMapping(consumes="application/json")
+public ResponseEntity<String> createCustomer(@RequestBody CustomerDTO customerDTO)
+{ 
+   HttpHeaders responseHeaders = new HttpHeaders();
+   responseHeaders.set("MyResponseHeaders", "Value1");
+   String response = customerService.createCustomer(customerDTO);
+   return new ResponseEntity<String>(response, responseHeaders, HttpStatus.CREATED);
+}

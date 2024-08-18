@@ -1,0 +1,93 @@
+CustomerController.java
+// Deleting a customer
+	@DeleteMapping(value="/{phoneNumber}", produces="text/plain")
+	public String deleteCustomer(
+			 @PathVariable("phoneNumber") long phoneNumber)
+			throws NoSuchCustomerException {
+
+		return customerService.deleteCustomer(phoneNumber);
+
+	}
+
+CustomerService.java
+//Contacts repository layer to delete customer
+	public String deleteCustomer(long phoneNumber)throws NoSuchCustomerException
+	{
+		return customerRepository.deleteCustomer(phoneNumber);
+	}
+	
+
+CustomerRepository.java
+public String deleteCustomer(long phoneNumber) throws NoSuchCustomerException
+	{   
+boolean notfound=true;
+		String response = "Customer of:"+phoneNumber+"\t does not exist";
+		for(CustomerDTO customer : customers)
+		{ 
+			if(customer.getPhoneNo() == phoneNumber)
+			{
+				customers.remove(customer);
+				response = customer.getName()+" with  phoneNumber "+customer.getPhoneNo()+" deleted successfully";
+				notfound=false;
+				break;
+			
+		              }
+                          }
+			if(notfound)
+				throw new NoSuchCustomerException("Customer does not exist :"+phoneNumber);
+		return response;
+
+             }
+
+
+How does it work?
+If the customer phone number is not passed then delete customer method throws user defined exception i.e. “NoSuchCustomerException” present in the customerRepository.java.
+It will be catched by the service class, then it will throw it to the controller class.
+Controller will also throw, it will be catched by the class which is annotated with
+“@RestControllerDevice”, this class has a method to handle the exceptions.
+This handler exception send customized error message back to the client.
+
+The spring-starter-web has all the classes which are required to send the customized exceptions.
+
+
+Check the video that is present in the infosys, it is useful
+
+public class NoSuchCustomerException extends Exception {
+ 
+	
+private static final long serialVersionUID = 1L;	
+
+	public NoSuchCustomerException() {
+
+		super();
+	}
+
+	public NoSuchCustomerException(String errors) {
+
+		super(errors);
+		
+	}
+	
+
+}
+
+@RestControllerAdvice
+public class ExceptionControllerAdvice {
+ 
+	@ExceptionHandler(Exception.class)
+	public String  exceptionHandler(Exception ex) {
+		 
+		return  ex.getMessage();
+	}
+	
+	
+	@ExceptionHandler(NoSuchCustomerException.class)
+	public ResponseEntity<ErrorMessage> exceptionHandler2(NoSuchCustomerException ex) {
+		 ErrorMessage error = new ErrorMessage();
+	        error.setErrorCode(HttpStatus.BAD_REQUEST.value());
+	        error.setMessage(ex.getMessage());
+	        return new ResponseEntity<>(error, HttpStatus.OK);
+		 
+	}
+} 
+

@@ -83,3 +83,29 @@ az
 
 ocrad
 ![alt text](https://github.com/Rockycta/corejava2/blob/e2c43f12d7f3292f2219380cfe26012dbd9e87d6/HK_core_java/11_this_keyword/1/ocrad.png)
+
+#2nd folder
+
+aa
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+ab
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+ac
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+ad
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+ae
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+af
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+
+ag
+![alt text](https://github.com/Rockycta/corejava2/blob/5aeadd829a1e533d096de2a82a5a6ddcd9ab8459/HK_core_java/11_this_keyword/2/aa.png)
+
+

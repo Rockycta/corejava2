@@ -24,10 +24,11 @@ public class CountCharacter {
 
 }
 
-
+```
 Line number 8, while calling a method, why you want to use "void", you were getting weired error for that.
 
 ![alt text](https://github.com/Rockycta/corejava2/blob/ae343776c051b2288554e5841335dfd3ffdb8027/Errors_and_solutions/Screenshot%20(47).png)
+
 
 ```java
 package com.rocky.in;
@@ -44,5 +45,5 @@ public class CountCharacter {
     }
 
 }
-
+```
 ![alt-text](https://github.com/Rockycta/corejava2/blob/ae343776c051b2288554e5841335dfd3ffdb8027/Errors_and_solutions/Screenshot%20(48).png)

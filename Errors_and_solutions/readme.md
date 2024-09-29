@@ -156,5 +156,31 @@ Solution
 
     }
 ```
+
+# What is the problem with the following code	
 	
-	
+```java	
+@Override
+    public void calculateTotalAmount() {
+        int sum;
+        for(Order order : orders){
+            sum = order.getPrice() - categoryDiscounts(order);
+        }
+        System.out.println(sum);
+    }
+```
+![alt text](https://github.com/Rockycta/corejava2/blob/e41db1c011e82b355ef2b73edd64fbae70eac586/Errors_and_solutions/Screenshot%20(50).png)
+
+Solution
+
+```java 
+
+@Override
+    public void calculateTotalAmount() {
+        int sum=0;
+        for(Order order : orders){
+            sum = order.getPrice() - categoryDiscounts(order);
+        }
+        System.out.println(sum);
+    }
+```

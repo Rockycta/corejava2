@@ -1,0 +1,141 @@
+HACKERRANK SPRING BOOT INTERMEDIATE HANDS ON EXAM
+1. Spring Boot: Microservice For Finance
+In developing a cutting-edge microservice for a leading financial institution, there is a need for a Spring Boot application dedicated to streamlining the loan application process. This application plays a pivotal role in automating and managing loan applications.
+The application's architecture is structured around three core services: ReceiptService, CreditService, and LoanService. Each of these services handles specific aspects of the loan process:
+ 1. ReceiptService: Manages the generation and handling of receipts that acknowledge the submission and processing of loan applications.
+ 2. CreditService: Oversees the evaluation of creditworthiness, including credit checks and assessments.
+ 3. LoanProvider: An interface, which is implemented by LoanService and Home LoanService, which defines the methods for creating and managing loans.
+ 4. LoanService: Facilitates the actual creation and management of loans, following approval based on credit assessments and other criteria.
+ 5. Home LoanService: Facilitates the actual creation and management of home loans, following approval based on credit assessments and other criteria.
+6. CreditScoreService: Facilitates the calculation of credit score based on the credit history of the applicant.
+To do:
+ 1. Define, configure, and return respective beans for the ReceiptService and CreditService service classes within the FinanceConfig.java configuration class. This strategic configuration will not only ensure that these vital services are seamlessly instantiated and managed by the Spring IoC container but also guarantee their accessibility throughout the application, including within your test environments.
+ 2. Define LoanProvider as a bean, with the LoanService and HomeLoanService classes as its implementation. This configuration will ensure that LoanProvider is instantiated and managed by the Spring IoC container, making it accessible throughout the application.
+ 3. Define HomeLoanService completely, as a prototype bean. This bean should be configured to be a prototype bean, ensuring that a new instance is created each time it is requested.
+ 4. Create a new service, CreditScoreService, which should depend on CreditService. Configure it within the FinanceConfig.java configuration class, and define it as a bean. This service should be a singleton bean, ensuring that only one instance is created and managed by the Spring IoC container.
+package com.finance.config;
+public class FinanceConfig {
+}
+
+
+package com.finance.dto;
+
+public class Credit {
+
+    private String creditName;
+    private String creditedPersonName;
+    private Double amount;
+    private String fromAccount;
+    private String toAccount;
+
+    public String getCreditName() {
+        return creditName;
+    }
+
+    public void setCreditName(String creditName) {
+        this.creditName = creditName;
+    }
+}
+
+package com.finance.dto;
+public class Loan {
+    private String loanName;
+    private String obtainedPersonName;
+    private Double amount;
+    private Long installments;
+
+    public String getLoanName() {
+        return loanName;
+    }
+    public void setLoanName(String loanName) {
+        this.loanName = loanName;
+    }
+}
+
+package com.finance.dto;
+public class Receipt {
+    private String receiptName;
+    private String ownersName;
+    private Double paidAmount;
+    private Double balance;
+    public String getReceiptName() {
+        return receiptName;
+    }
+    public void setReceiptName(String receiptName) {
+        this.receiptName = receiptName;
+    }
+}
+package com.finance.service;
+public class CreditScoreService {
+    public Double calculateCreditScore() {
+        return null;
+    }
+}
+
+package com.finance.service;
+
+import com.finance.dto.Credit;
+
+public class CreditService {
+    public Credit createCredit() {
+        Credit credit = new Credit();
+        credit.setCreditName("Housing loan credit");
+        credit.setCreditedPersonName("Dasun");
+        credit.setFromAccount("Dasun's account");
+        credit.setToAccount("Bank account");
+        credit.setAmount(10D);
+        return credit;
+    }
+}
+package com.finance.service;
+public class HomeLoanService {
+}
+package com.finance.service;
+import com.finance.dto.Loan;
+public interface LoanProvider {
+    Loan createLoan();
+}
+
+package com.finance.service;
+import com.finance.dto.Loan;
+public class LoanService implements LoanProvider {
+    @Override
+    public Loan createLoan() {
+        Loan loan = new Loan();
+        loan.setLoanName("Housing loan");
+        loan.setAmount(110D);
+        loan.setInstallments(11L);
+        loan.setObtainedPersonName("Dasun");
+        return loan;
+    }
+}
+
+package com.finance.service;
+
+import com.finance.dto.Receipt;
+
+public class ReceiptService {
+
+    public Receipt createReceipt() {
+        Receipt receipt = new Receipt();
+        receipt.setReceiptName("Receipt 1");
+        receipt.setBalance(100D);
+        receipt.setOwnersName("Dasun");
+        receipt.setPaidAmount(10D);
+        return receipt;
+    }
+}
+
+package com.finance;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+
+

@@ -1,0 +1,212 @@
+HACKERRANK SPRING BOOT BASIC HANDS ON
+Springboot: Artist Management APIs
+
+In this challenge, implement a simple REST API to manage a collection of Artist data.
+Each artist is a JSON entry with the following keys:
+ * id: the unique ID of the event (Long).
+ * firstName: first name of the artist (String).
+ * lastName: last name of the artist (String).
+
+Here is an example of an artist JSON object:
+{
+  "firstName": "Dasun",
+  "lastName": "Anushka"
+}
+
+An implementation of the Artist model is provided. Implement a REST service that exposes the /v1/artists endpoints, which allows for managing the collection of artists' records in the following way:
+POST request to /v1/artists:
+ * Creates a new artist data record.
+ * The response code is 201, and the response body is the created record, including its unique id.
+GET request to /v1/artists:
+ * The response code is 200.
+ * The response body is a list of matching records, ordered by their ids in increasing order.
+GET request to /v1/artists/{artistId}:
+ * Returns a record with the given id and status code 200.
+ * If there is no record with the given id, the response code is null.
+DELETE request to /v1/artists/{artistId}:
+ * Deletes the record with the given id and returns status code 204.
+Complete the project so that it passes all the test cases when running the provided unit tests. The project, by default, supports the use of the H2 database.
+ * https://github.com/akshaychaudhari/hello-weather-api
+ * https://github.com/lionel-mani/springBootRefer
+
+package com.artist.controller;
+
+import com.artist.dto.ArtistRequest;
+import com.artist.model.Artist;
+import com.artist.service.ArtistService;
+import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("v1/artists")
+public class ArtistController {
+
+    private final ArtistService artistService;
+
+    public ArtistController(ArtistService artistService) {
+        this.artistService = artistService;
+    }
+
+    @PostMapping
+    public ResponseEntity<Artist> createArtist(@RequestBody ArtistRequest artistRequest) {
+        Artist artist = Artist.builder()
+                .firstName(artistRequest.firstName())
+                .lastName(artistRequest.lastName())
+                .build();
+
+        artist = artistService.save(artist);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(artist);
+    }
+}
+public ArtistController(ArtistService artistService) {
+    this.artistService = artistService;
+}
+
+@PostMapping
+public ResponseEntity<Artist> createPlaylist(@RequestBody ArtistRequest artistRequest) {
+    Artist artist = Artist.builder().firstName(artistRequest.firstName()).lastName(artistRequest.lastName()).build();
+    Artist savedArtist = artistService.createArtist(artistRequest);
+    return new ResponseEntity<>(savedArtist, HttpStatus.CREATED);
+}
+
+@GetMapping("/{artistId}")
+public ResponseEntity<Artist> getArtistById(@PathVariable Long artistId) {
+    Artist artist = artistService.getArtistById(artistId);
+    return new ResponseEntity<>(artist, HttpStatus.OK);
+}
+
+@GetMapping("/{artistId}")
+public ResponseEntity<Artist> getArtistById(@PathVariable Long artistId) {
+    Artist artist = artistService.getArtistById(artistId);
+    return new ResponseEntity<>(artist, HttpStatus.OK);
+}
+
+@GetMapping
+public ResponseEntity<List<Artist>> getAllArtists() {
+    List<Artist> artists = artistService.getArtists();
+    return new ResponseEntity<>(artists, HttpStatus.OK);
+}
+
+@DeleteMapping("/{artistId}")
+public ResponseEntity<Void> deleteArtist(@PathVariable Long artistId) {
+    artistService.deleteArtist(artistId);
+    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+}
+package com.artist.repository;
+
+import com.artist.model.Artist;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ArtistRepository extends JpaRepository<Artist, Long> {
+}
+package com.artist.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "artist")
+public class Artist {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "artist_id")
+    private Long id;
+
+    @Column(name = "artist_first_name")
+    private String firstName;
+
+    @Column(name = "artist_last_name")
+    private String lastName;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    // Getters and setters for firstName and lastName
+}
+public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
+
+public String getFirstName() {
+    return firstName;
+}
+
+public void setFirstName(String firstName) {
+    this.firstName = firstName;
+}
+
+public String getLastName() {
+    return lastName;
+}
+
+public void setLastName(String lastName) {
+    this.lastName = lastName;
+}
+public String getFirstName() {
+    return firstName;
+}
+
+public void setFirstName(String firstName) {
+    this.firstName = firstName;
+}
+
+public String getLastName() {
+    return lastName;
+}
+
+public void setLastName(String lastName) {
+    this.lastName = lastName;
+}
+public ArtistServiceImpl(ArtistRepository artistRepository) {
+    this.artistRepository = artistRepository;
+}
+
+@Override
+public Artist createArtist(ArtistRequest artistRequest) {
+    return artistRepository.save(artistRequest);
+}
+
+@Override
+public List<Artist> getArtists() {
+    return artistService.findAll();
+}
+
+@Override
+public Artist getArtistById(Long id) {
+    // Optional<Artist> artist = artistRepository.findById(id);
+    return null;
+}
+
+@Override
+public void deleteArtist(Long id) {
+    // TODO: Implement deleteArtist
+}
+
+import com.artist.model.Artist;
+import java.util.List;
+
+public interface ArtistService {
+
+    Artist createArtist(ArtistRequest artistRequest);
+
+    List<Artist> getArtists();
+
+    Artist getArtistById(Long id);
+
+    void deleteArtist(Long id);
+}
+

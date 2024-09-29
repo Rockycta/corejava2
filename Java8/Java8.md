@@ -1,7 +1,7 @@
 java8.md
 
 
-#How to print the contents of MAP or LIST using java8?
+# How to print the contents of MAP or LIST using java8?
 First Well verse with forEach method present in the LIST interface and MAP interface, it is as follows.
 
 ```java

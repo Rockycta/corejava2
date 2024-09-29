@@ -136,7 +136,8 @@ myMap.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + "
         }
         
     }
-	```
+```
+
 ![alt text](https://github.com/Rockycta/corejava2/blob/96b7a256c698d57b67bddc20add78eb442abf70b/Errors_and_solutions/Screenshot%20(49).png)
 
 ```java
@@ -152,6 +153,6 @@ myMap.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + "
         }
 
     }
-	```
+```
 	
 	

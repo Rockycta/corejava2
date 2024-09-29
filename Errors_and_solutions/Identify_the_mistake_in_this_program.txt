@@ -1,0 +1,82 @@
+Following Code not returning all the items in the carts, it is returning only last item.
+what could be the issue with the following code
+
+public class Main {
+    public static void main(String[] args) {
+        
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Enter the number of orders");
+
+         String str = scanner.nextLine();
+         System.out.println("Enter  "+str+"  Orders");
+
+         IOrderSystem orderSystem=null;
+         for(int i=0;i< Integer.parseInt(str);i++) {
+
+             String[] strarr = scanner.nextLine().split(" ");
+             Order order = new Order();
+             order.setName(strarr[0]);
+             order.setPrice(Integer.parseInt(strarr[1]));
+
+             orderSystem = new OrderSystem();
+             orderSystem.addToCart(order);
+
+         }
+             System.out.println("Entered Orders are as follow");
+             orderSystem.cartItems();
+    }
+}
+
+
+public class OrderSystem implements IOrderSystem{
+
+
+    List<Order> orders;
+
+    public OrderSystem() {
+        orders=new ArrayList<>();
+    }
+
+    @Override
+    public void addToCart(Order order) {
+        orders.add(order);
+    }
+
+    @Override
+    public int removeFromCart(Order order) {
+        return 0;
+    }
+
+    @Override
+    public void calculateTotalAmount() {
+
+    }
+
+    @Override
+    public void categoryDiscounts() {
+
+    }
+
+    @Override
+    public void cartItems() {
+
+        for(Order order:orders){
+            System.out.println(order.getName()+" "+order.getPrice());
+
+        }
+      
+    }
+}
+
+
+
+The issue with the code is that you're creating a new OrderSystem object in each iteration of the loop. This means you're essentially creating multiple carts, each holding only the last added item.
+
+Here's how to fix it:
+
+Initialize orderSystem outside the loop:
+
+Instead of creating a new OrderSystem object inside the loop, create it once before the loop starts. This ensures all items are added to the same cart.
+
+//line number 21 was the mistake
+IOrderSystem orderSystem = new OrderSystem();

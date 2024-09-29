@@ -57,6 +57,6 @@ public class Order {
 }
 ```
 
-Order object is as above so we have to write below code to print contents of Orders LIST
+Order object is as above so we have to write below code to print contents of Orders LIST <br>
 orders.forEach(a->System.out.println(a.getName()+" "+a.getPrice()));
 

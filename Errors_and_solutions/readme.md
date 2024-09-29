@@ -55,6 +55,8 @@ line number 8, non static method can't be reference from static context.
 
 
 ###########################################################################
+
+```java
    char[] ch = str.toCharArray();
    for(int i=0;i<ch.length;i++){
        Map<Character,Integer> hm = new HashMap<>();
@@ -75,7 +77,7 @@ line number 8, non static method can't be reference from static context.
 
         }
     }
-	
+```	
 
 # How to print Map contents in java
 

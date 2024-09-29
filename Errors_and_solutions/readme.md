@@ -46,6 +46,6 @@ public class CountCharacter {
 
 }
 ```
-line number 26, non static method can't be reference from static context.
+line number 8, non static method can't be reference from static context.
 
 ![alt-text](https://github.com/Rockycta/corejava2/blob/ae343776c051b2288554e5841335dfd3ffdb8027/Errors_and_solutions/Screenshot%20(48).png)

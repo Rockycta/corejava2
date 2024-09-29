@@ -116,3 +116,42 @@ for (String key : myMap.keySet()) {
 5. Using a stream and forEach:
 
 myMap.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + " = " + entry.getValue()));
+
+
+
+###########################################################################################
+
+# What is the issue with this code
+
+```java
+ @Override
+    public int categoryDiscounts(Order order) {
+
+        if(order.getPrice()<10){
+            return (order.getPrice()) * 10 / 100;
+        } else if (order.getPrice()<20 && order.getPrice()<10) {
+            return (order.getPrice())*20/100;
+        } else if (order.getPrice()>20) {
+            return (order.getPrice())*30/100;
+        }
+        
+    }
+	```
+![alt text](https://github.com/Rockycta/corejava2/blob/96b7a256c698d57b67bddc20add78eb442abf70b/Errors_and_solutions/Screenshot%20(49).png)
+
+```java
+   @Override
+    public int categoryDiscounts(Order order) {
+
+        if(order.getPrice()<10){
+            return (order.getPrice()) * 10 / 100;
+        } else if (order.getPrice()<20 && order.getPrice()<10) {
+            return (order.getPrice())*20/100;
+        } else  {
+            return (order.getPrice())*30/100;
+        }
+
+    }
+	```
+	
+	

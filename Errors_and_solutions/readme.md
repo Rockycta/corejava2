@@ -52,3 +52,65 @@ public class CountCharacter {
 line number 8, non static method can't be reference from static context.
 
 ![alt-text](https://github.com/Rockycta/corejava2/blob/ae343776c051b2288554e5841335dfd3ffdb8027/Errors_and_solutions/Screenshot%20(48).png)
+
+
+###########################################################################
+   char[] ch = str.toCharArray();
+   for(int i=0;i<ch.length;i++){
+       Map<Character,Integer> hm = new HashMap<>();
+       if(hm.containsKey(ch[i])){
+           
+       }
+   }
+   
+   
+#  Replace above program with enchanced for loop
+  
+  
+   
+   char[] ch = str.toCharArray();
+   for (char c : ch) {
+     Map<Character, Integer> hm = new HashMap<>();
+       if (hm.containsKey(c)) {
+
+        }
+    }
+	
+
+# How to print Map contents in java
+
+There are several ways to print the contents of a Map in Java:
+
+1. Using a for-each loop:
+
+Map<String, Integer> myMap = new HashMap<>();
+// ... populate the map
+
+for (Map.Entry<String, Integer> entry : myMap.entrySet()) {
+    System.out.println(entry.getKey() + " = " + entry.getValue());
+}
+
+Note that even though it is called for-each loop, only for is used  ie for(), it is just for saying.
+
+2. Using the forEach method:
+
+myMap.forEach((key, value) -> System.out.println(key + " = " + value));
+
+3. Using the entrySet() method and an iterator:
+
+Set<Map.Entry<String, Integer>> entries = myMap.entrySet();
+Iterator<Map.Entry<String, Integer>> iterator = entries.iterator();
+while (iterator.hasNext()) {
+    Map.Entry<String, Integer> entry = iterator.next();
+    System.out.println(entry.getKey() + " = " + entry.getValue());
+}
+
+4. Using the keySet() method and a for-each loop:
+for (String key : myMap.keySet()) {
+    System.out.println(key + " = " + myMap.get(key));
+}
+
+
+5. Using a stream and forEach:
+
+myMap.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + " = " + entry.getValue()));

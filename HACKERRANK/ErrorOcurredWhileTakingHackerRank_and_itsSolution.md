@@ -98,6 +98,7 @@ public class OrderSystem implements IOrderSystem {
         return categoryDiscountMap;
     }
 
+//This code modified - started
 **    @Override
     public Map<String, Integer> cartItems() {
         Map<String, Integer> itemCountMap = new LinkedHashMap<>();
@@ -108,6 +109,8 @@ public class OrderSystem implements IOrderSystem {
         return itemCountMap;
     }
 **
+//This code modified - ended
+ 
     private String getCategory(int price) {
         if (price <= 10) {
             return "Cheap";

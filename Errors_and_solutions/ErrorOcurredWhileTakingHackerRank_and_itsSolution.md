@@ -1,29 +1,29 @@
-Actual output is
-Total Amount: 319
-Expensive Category Discount: 131
-Order-4 (1 items)
-Order-3 (1 items)
-Order-6 (1 items)
-Order-5 (1 items)
-Order-2 (1 items)
-Order-1 (1 items)
-Order-8 (1 items)
-Order-7 (1 items)
-Order-9 (1 items)
+Actual output is <br>
+Total Amount: 319 <br>
+Expensive Category Discount: 131<br>
+Order-4 (1 items)<br>
+Order-3 (1 items)<br>
+Order-6 (1 items)<br>
+Order-5 (1 items)<br>
+Order-2 (1 items)<br>
+Order-1 (1 items)<br>
+Order-8 (1 items)<br>
+Order-7 (1 items)<br>
+Order-9 (1 items)<br>
 
 but expected output is 
-Actual output is
-Total Amount: 319
-Expensive Category Discount: 131
-Order-4 (1 items)
-Order-3 (1 items)
-Order-6 (1 items)
-Order-5 (1 items)
-Order-2 (1 items)
-Order-1 (1 items)
-Order-8 (1 items)
-Order-7 (1 items)
-Order-9 (1 items)
+Actual output is<br>
+Total Amount: 319<br>
+Expensive Category Discount: 131<br>
+Order-4 (1 items)<br>
+Order-3 (1 items)<br>
+Order-6 (1 items)<br>
+Order-5 (1 items)<br>
+Order-2 (1 items)<br>
+Order-1 (1 items)<br>
+Order-8 (1 items)<br>
+Order-7 (1 items)<br>
+Order-9 (1 items)<br>
 
 What modification required in the code to get the above output?
 
@@ -98,6 +98,7 @@ public class OrderSystem implements IOrderSystem {
         return categoryDiscountMap;
     }
 
+//This code modified - started
 **    @Override
     public Map<String, Integer> cartItems() {
         Map<String, Integer> itemCountMap = new LinkedHashMap<>();
@@ -108,6 +109,8 @@ public class OrderSystem implements IOrderSystem {
         return itemCountMap;
     }
 **
+//This code modified - ended
+ 
     private String getCategory(int price) {
         if (price <= 10) {
             return "Cheap";
@@ -145,16 +148,16 @@ Instead of using Java Streams, I used a simple loop to increment the count of ea
 Test the Code
 After making these changes, the output for the provided input should match your expected output:
 
-Total Amount: 319
-Expensive Category Discount: 131
-Order-4 (1 items)
-Order-3 (1 items)
-Order-6 (1 items)
-Order-5 (1 items)
-Order-2 (1 items)
-Order-1 (1 items)
-Order-8 (1 items)
-Order-7 (1 items)
-Order-9 (1 items)
+Total Amount: 319<br>
+Expensive Category Discount: 131<br>
+Order-4 (1 items)<br>
+Order-3 (1 items)<br>
+Order-6 (1 items)<br>
+Order-5 (1 items)<br>
+Order-2 (1 items)<br>
+Order-1 (1 items)<br>
+Order-8 (1 items)<br>
+Order-7 (1 items)<br>
+Order-9 (1 items)<br>
 Conclusion
 By utilizing a LinkedHashMap and manually counting items in the order they are added, you can ensure that the output will match the expected format.

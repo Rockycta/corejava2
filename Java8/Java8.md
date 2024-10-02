@@ -60,3 +60,123 @@ public class Order {
 Order object is as above so we have to write below code to print contents of Orders LIST <br>
 orders.forEach(a->System.out.println(a.getName()+" "+a.getPrice()));
 
+
+# Comparator functional interface and it's examples
+
+```java
+public class SortingDemo {
+    public static void main(String[] args) {
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(10);
+        al.add(21);
+        al.add(32);
+        al.add(5);
+        al.add(8);
+		
+	    System.out.println("Elements Before Sorting ::" + al);
+		
+		Collections.sort(al, new ElementsSortingComparator());
+		
+		Collections.sort(al, (o1, o2) -> {
+            return (o1 > o2) ? 1 : (o1 < o2) ? -1 : 0;
+        });
+		
+        System.out.println("Elements After Sorting :: " + al);
+		
+}
+
+Internal implementation of Sort method
+======================================
+
+Collections.java:
+ public static <T> void sort(List<T> list, Comparator<? super T> c) {
+        list.sort(c);
+    }
+	
+Whatever we have given comparator, it is passed as argument and sort method is called on List we passed.
+
+
+List:
+default void sort(Comparator<? super E> c) {
+        Object[] a = this.toArray();            // this means List here because sort method is called on list. List is converted to Array here.
+        Arrays.sort(a, (Comparator) c);
+        ListIterator<E> i = this.listIterator();
+        for (Object e : a) {
+            i.next();
+            i.set((E) e);
+        }
+    }
+	
+Arrays:
+public static <T> void sort(T[] a, Comparator<? super T> c) {
+        if (c == null) {    // if no comparator is passed then it goes to sort(a) it is meant for natural sorting order.
+            sort(a);
+        } else {
+            if (LegacyMergeSort.userRequested)
+                legacyMergeSort(a, c);
+            else
+                TimSort.sort(a, 0, a.length, c, null, 0, 0);
+        }
+    }
+	
+Arrays:	
+	public static void sort(Object[] a) {
+        if (LegacyMergeSort.userRequested)
+            legacyMergeSort(a);
+        else
+            ComparableTimSort.sort(a, 0, a.length, null, 0, 0);
+    }
+	
+see this comprableTimeSort.sort method.
+
+
+
+if the comparator is given then, it uses following logic
+
+ public static <T> void sort(T[] a, Comparator<? super T> c) {
+        if (c == null) {
+            sort(a);
+        } else {
+            if (LegacyMergeSort.userRequested)
+                legacyMergeSort(a, c);
+            else
+                TimSort.sort(a, 0, a.length, c, null, 0, 0);
+        }
+    }
+
+It uses TimeSort.sort if comparator given
+
+static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c,
+                         T[] work, int workBase, int workLen) {
+        assert c != null && a != null && lo >= 0 && lo <= hi && hi <= a.length;
+
+        int nRemaining  = hi - lo;
+        if (nRemaining < 2)
+            return;  // Arrays of size 0 and 1 are always sorted
+
+        // If array is small, do a "mini-TimSort" with no merges
+        if (nRemaining < MIN_MERGE) {
+            int initRunLen = countRunAndMakeAscending(a, lo, hi, c);
+            binarySort(a, lo, hi, lo + initRunLen, c);
+            return;
+        }
+
+........
+
+
+
+ private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
+                                                    Comparator<? super T> c) {
+        assert lo < hi;
+        int runHi = lo + 1;
+        if (runHi == hi)
+            return 1;
+
+        // Find end of run, and reverse range if descending
+        if (c.compare(a[runHi++], a[lo]) < 0) { // Descending
+            while (runHi < hi && c.compare(a[runHi], a[runHi - 1]) < 0)
+                runHi++;
+            reverseRange(a, lo, runHi);
+
+See above it is calling compare method.
+```

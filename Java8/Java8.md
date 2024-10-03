@@ -1,6 +1,6 @@
 java8.md
 
-#Functional inteface
+# Functional inteface
 
 Predicate
 

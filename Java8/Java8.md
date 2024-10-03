@@ -1,5 +1,111 @@
 java8.md
 
+#Functional inteface
+
+Predicate
+
+```java
+@FunctionalInterface
+public interface Predicate<T>{
+	boolean test(T t)
+}
+```
+
+For more interface use following 
+https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html
+
+
+Consumer
+```java
+@FunctionalInterface
+public interface Consumer<T>{
+	void accept(T t)
+}
+```
+
+For more information, use the following.
+https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html
+
+
+Supplier
+```java
+@FunctionalInterface
+public interface Supplier<T>{
+	T get()
+}
+```
+
+For more information, use the following.
+https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html
+
+
+Function
+```java
+@FunctionalInterface
+public interface Function<T,R>{
+	R apply(T t)
+}
+
+Parameters:
+t - the function argument
+R - Returns the function result
+```
+
+For more information, use the following
+https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html
+
+Filter
+```java
+Stream<T> filter(Predicate<? super T> predicate)
+Returns a stream consisting of the elements of this stream that match the given predicate.
+```
+
+Map
+
+```java
+<R> Stream<R>	map(Function<? super T,? extends R> mapper)
+Returns a stream consisting of the results of applying the given function to the elements of this stream.
+```
+
+```java
+Comparator
+
+@FunctionalInterface
+public interface Comparator<T> {
+	int compare(T o1, T o2);
+}
+
+
+
+@FunctionalInterface
+public interface Callable<V> {
+    /**
+     * Computes a result, or throws an exception if unable to do so.
+     *
+     * @return computed result
+     * @throws Exception if unable to compute a result
+     */
+    V call() throws Exception;
+}
+
+
+@FunctionalInterface
+public interface Runnable {
+    /**
+     * When an object implementing interface {@code Runnable} is used
+     * to create a thread, starting the thread causes the object's
+     * {@code run} method to be called in that separately executing
+     * thread.
+     * <p>
+     * The general contract of the method {@code run} is that it may
+     * take any action whatsoever.
+     *
+     * @see     java.lang.Thread#run()
+     */
+    public abstract void run();
+}
+
+```
 
 # How to print the contents of MAP or LIST using java8?
 First Well verse with forEach method present in the LIST interface and MAP interface, it is as follows.
